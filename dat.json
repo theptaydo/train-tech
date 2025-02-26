@@ -1,0 +1,158 @@
+[
+  {
+    "name": "Safari",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/5/52/Safari_browser_logo.svg",
+    "description": "Duyệt web nhanh, bảo mật, chế độ ẩn danh.",
+    "category": "Trình duyệt"
+  },
+  {
+    "name": "Google Chrome",
+    "icon": "https://static.vecteezy.com/system/resources/previews/022/484/495/non_2x/google-chrome-icon-logo-symbol-free-png.png",
+    "description": "Trình duyệt web phổ biến, hỗ trợ mở nhiều tab.",
+    "category": "Trình duyệt"
+  },
+  {
+    "name": "YouTube",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
+    "description": "Xem video, học tập và giải trí dễ dàng.",
+    "category": "Giải trí"
+  },
+  {
+    "name": "Spotify",
+    "icon": "https://th.bing.com/th/id/R.679534ebd3056155af24fbc223c3c0b7?rik=kZayluM02ixcFg&pid=ImgRaw&r=0",
+    "description": "Nghe nhạc trực tuyến với hàng triệu bài hát.",
+    "category": "Giải trí"
+  },
+  {
+    "name": "Zalo",
+    "icon": "https://th.bing.com/th/id/OIP.xW2F3TvZmbupU73ecvsm-QHaHB?rs=1&pid=ImgDetMain",
+    "description": "Nhắn tin, gọi điện miễn phí phổ biến tại Việt Nam.",
+    "category": "Liên lạc"
+  },
+  {
+    "name": "Facebook",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
+    "description": "Mạng xã hội lớn nhất thế giới.",
+    "category": "Mạng xã hội"
+  },
+  {
+    "name": "Shopee",
+    "icon": "https://logospng.org/download/shopee/logo-shopee-icon-1024.png",
+    "description": "Mua sắm online với nhiều ưu đãi.",
+    "category": "Mua sắm & Thanh toán"
+  },
+  {
+    "name": "MoMo",
+    "icon": "https://th.bing.com/th/id/OIP.1GNvjAZu4hlbE0bWflshGwHaHa?rs=1&pid=ImgDetMain",
+    "description": "Ví điện tử phổ biến tại Việt Nam.",
+    "category": "Mua sắm & Thanh toán"
+  },
+  {
+    "name": "Google Maps",
+    "icon": "https://static.vecteezy.com/system/resources/previews/022/484/500/large_2x/google-maps-gmaps-icon-logo-symbol-free-png.png",
+    "description": "Bản đồ thông minh, chỉ đường chính xác.",
+    "category": "Bản đồ & Dẫn đường"
+  },
+  {
+    "name": "Camera",
+    "icon": "https://th.bing.com/th/id/OIP.Y_1Ic2h6ozxfgnaWO82BoQHaHN?rs=1&pid=ImgDetMain",
+    "description": "Chụp ảnh, quay video với nhiều chế độ.",
+    "category": "Ảnh & Video"
+  },
+  {
+    "name": "Messenger",
+    "icon": "https://static.vecteezy.com/system/resources/previews/022/488/748/original/3d-render-meta-chat-messenger-facebook-messenger-icon-bubble-isolated-on-transparent-background-free-png.png",
+    "description": "Ứng dụng nhắn tin của Facebook.",
+    "category": "Liên lạc"
+  },
+  {
+    "name": "App Store",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg",
+    "description": "Kho ứng dụng dành cho iPhone và iPad.",
+    "category": "Cửa hàng ứng dụng"
+  },
+  {
+    "name": "Canva",
+    "icon": "https://static.vecteezy.com/system/resources/previews/048/759/334/non_2x/canva-transparent-icon-free-png.png",
+    "description": "Công cụ thiết kế đồ họa trực tuyến.",
+    "category": "Thiết kế"
+  },
+  {
+    "name": "Gmail",
+    "icon": "https://static.vecteezy.com/system/resources/previews/022/484/516/original/google-mail-gmail-icon-logo-symbol-free-png.png",
+    "description": "Dịch vụ email của Google.",
+    "category": "Liên lạc"
+  },
+  {
+    "name": "Mail",
+    "icon": "https://th.bing.com/th/id/OIP.k2X2Tok8FGPsDiOQASmx_QHaHa?rs=1&pid=ImgDetMain",
+    "description": "Dịch vụ email của Icloud.",
+    "category": "Liên lạc"
+  },
+  {
+    "name": "Outlook",
+    "icon": "https://th.bing.com/th/id/OIP.7LOtbzJ-VmKeHy8gKKKuQQHaHa?rs=1&pid=ImgDetMain",
+    "description": "Dịch vụ email của Microsoft.",
+    "category": "Liên lạc"
+  },
+  {
+    "name": "Google Dịch",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/d/db/Google_Translate_Icon.png",
+    "description": "Dịch văn bản và giọng nói nhanh chóng.",
+    "category": "Học tập & Tin học"
+  },
+  {
+    "name": "Cài đặt",
+    "icon": "https://th.bing.com/th/id/R.46b3e762d7e29dfcce1c57c7ab6f9ce4?rik=0BfkB5XCVsDgtA&riu=http%3a%2f%2ficons.iconarchive.com%2ficons%2fiynque%2fios7-style%2f1024%2fSettings-icon.png&ehk=rssjNCq%2b5tj6rBc%2fDC%2fWZEftsqyRzHlEhDdiDNo2JOw%3d&risl=&pid=ImgRaw&r=0",
+    "description": "Truy cập và tùy chỉnh cài đặt hệ thống.",
+    "category": "Hệ thống"
+  },
+  {
+    "name": "Grab",
+    "icon": "https://th.bing.com/th/id/R.f4dd2c8de14c38e91c7ee3b0ce57732f?rik=d5ke24qRBT9CnQ&pid=ImgRaw&r=0",
+    "description": "Ứng dụng đặt xe và giao đồ ăn.",
+    "category": "Giao thông & Giao hàng"
+  },
+  {
+    "name": "ChatGPT",
+    "icon": "https://static.vecteezy.com/system/resources/previews/021/059/827/original/chatgpt-logo-chat-gpt-icon-on-white-background-free-vector.jpg",
+    "description": "Trợ lý AI thông minh của OpenAI.",
+    "category": "Trí tuệ nhân tạo"
+  },
+  {
+    "name": "Copilot",
+    "icon": "https://static.vecteezy.com/system/resources/previews/046/861/635/non_2x/copilot-icon-transparent-background-free-png.png",
+    "description": "Trợ lý AI của Microsoft hỗ trợ công việc.",
+    "category": "Trí tuệ nhân tạo"
+  },
+  {
+    "name": "CapCut",
+    "icon": "https://www.svgrepo.com/download/504203/capcut.svg",
+    "description": "Ứng dụng chỉnh sửa video mạnh mẽ.",
+    "category": "Ảnh & Video"
+  },
+  {
+    "name": "Pinterest",
+    "icon": "https://th.bing.com/th/id/OIP.09F15WCuEz8e1c1OwXN1GgHaHa?rs=1&pid=ImgDetMain",
+    "description": "Khám phá ý tưởng và hình ảnh sáng tạo.",
+    "category": "Mạng xã hội"
+  },
+  {
+    "name": "Ảnh",
+    "icon": "https://th.bing.com/th/id/R.52b11ac44ead1f860f4f4d352c13efbd?rik=zzYi%2fFPP5d2OEQ&pid=ImgRaw&r=0",
+    "description": "Ứng dụng quản lý ảnh của Apple.",
+    "category": "Ảnh & Video"
+  },
+  {
+    "name": "Zoom",
+    "icon": "https://cdn.osxdaily.com/wp-content/uploads/2022/04/zoom-icon.jpg",
+    "description": "Ứng dụng họp trực tuyến phổ biến.",
+    "category": "Liên lạc"
+  },
+  {
+    "name": "Investing.com",
+    "icon": "https://yt3.ggpht.com/a/AATXAJxZAJcVrUFGS7p2TiGt-683uxX4dkvyhojhCQ=s900-c-k-c0xffffffff-no-rj-mo",
+    "description": "Thông tin tài chính và đầu tư.",
+    "category": "Tài chính & Đầu tư"
+  }
+]

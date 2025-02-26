@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh sách Ứng dụng iPhone 15</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .filter-container {
+      width: 100%;
+      /* display: flex
+; */
+      justify-content: space-between;
+      margin-bottom: 20px;
+      justify-content: center;
+      align-items: center;
+      display: inline-block;
+      /* margin: 0 auto; */
+
+    }
+
+    input,
+    select {
+      width: 90%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      /* margin: 0 auto; */
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .app-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .app-card {
+      width: 200px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .app-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .app-card h3 {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .app-card p {
+      font-size: 14px;
+      color: #555;
+      white-space: nowrap;
+      /* Không cho phép xuống dòng */
+      overflow: hidden;
+      /* Ẩn nội dung vượt quá kích thước */
+      text-overflow: ellipsis;
+      /* Hiển thị dấu "..." khi quá dài */
+      max-width: 100%;
+      /* Giới hạn độ rộng */
+      display: block;
+      /* Đảm bảo nó hoạt động với các phần tử inline */
+    }
+
+    .app-detail {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .app-detail img {
+      width: 100px;
+      height: 100px;
+      border-radius: 15px;
+    }
+
+    .app-detail h2 {
+      margin-top: 10px;
+    }
+
+    .close-btn {
+      margin-top: 10px;
+      background: red;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>📱 Danh sách Ứng dụng iPhone 15</h1>
+
+  <div class="filter-container">
+    <input type="text" id="search" placeholder="🔍 Tìm kiếm ứng dụng..." onkeyup="filterApps()">
+    <select id="category" onchange="filterApps()">
+      <option value="">📂 Tất cả</option>
+      <option value="Trình duyệt">🌐 Trình duyệt</option>
+      <option value="Liên lạc">📞 Liên lạc</option>
+      <option value="Giải trí">🎵 Giải trí</option>
+      <option value="Công cụ">🔧 Công cụ</option>
+      <option value="Ảnh & Video">📷 Ảnh & Video</option>
+      <option value="Bản đồ & Dẫn đường">🗺️ Bản đồ & Dẫn đường</option>
+      <option value="Mua sắm & Thanh toán">🛒 Mua sắm & Thanh toán</option>
+      <option value="Học tập & Tin học">📖 Học tập & Tin học</option>
+    </select>
+  </div>
+
+  <div class="app-list" id="app-list">
+    <!-- Ứng dụng sẽ được tạo tự động bằng JavaScript -->
+  </div>
+
+  <!-- Cửa sổ hiển thị chi tiết ứng dụng -->
+  <div class="app-detail" id="app-detail">
+    <img id="app-icon" src="" alt="App Icon">
+    <h2 id="app-name"></h2>
+    <p id="app-description"></p>
+    <button class="close-btn" onclick="closeDetail()">Đóng</button>
+  </div>
+
+  <script>
+    // Dữ liệu ứng dụng với danh mục
+    const apps = [
+      {
+        "name": "Safari",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/5/52/Safari_browser_logo.svg",
+        "description": "Trình duyệt mặc định trên iPhone, giúp bạn truy cập trang web, đọc báo, tìm kiếm thông tin trên Internet một cách nhanh chóng và bảo mật.",
+        "category": "Trình duyệt"
+      },
+      {
+        "name": "Google Chrome",
+        "icon": "https://static.vecteezy.com/system/resources/previews/022/484/495/non_2x/google-chrome-icon-logo-symbol-free-png.png",
+        "description": "Trình duyệt web phổ biến, hỗ trợ mở nhiều tab cùng lúc, đồng bộ dữ liệu với tài khoản Google, tích hợp Google Tìm kiếm và các tiện ích mở rộng.",
+        "category": "Trình duyệt"
+      },
+      {
+        "name": "YouTube",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
+        "description": "Ứng dụng xem nội dung video đa dạng: phim, video ca nhạc, tin tức, học tập,... Hỗ trợ lưu video ngoại tuyến và chia sẻ nội dung dễ dàng.",
+        "category": "Giải trí"
+      },
+      {
+        "name": "Spotify",
+        "icon": "https://th.bing.com/th/id/R.679534ebd3056155af24fbc223c3c0b7?rik=kZayluM02ixcFg&pid=ImgRaw&r=0",
+        "description": "Ứng dụng nghe nhạc trực tuyến với hàng triệu bài hát, tạo playlist cá nhân, gợi ý nhạc theo sở thích và hỗ trợ nghe nhạc ngoại tuyến.",
+        "category": "Giải trí"
+      },
+      {
+        "name": "Zalo",
+        "icon": "https://th.bing.com/th/id/OIP.xW2F3TvZmbupU73ecvsm-QHaHB?rs=1&pid=ImgDetMain",
+        "description": "Ứng dụng nhắn tin, gọi điện miễn phí phổ biến tại Việt Nam. Hỗ trợ gửi ảnh, video, tin nhắn thoại và tạo nhóm trò chuyện dễ dàng.",
+        "category": "Liên lạc"
+      },
+      {
+        "name": "Facebook",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
+        "description": "Mạng xã hội phổ biến nhất thế giới, cho phép bạn kết nối với bạn bè, chia sẻ hình ảnh, video, cập nhật trạng thái và theo dõi tin tức.",
+        "category": "Mạng xã hội"
+      },
+      {
+        "name": "Shopee",
+        "icon": "https://logospng.org/download/shopee/logo-shopee-icon-1024.png",
+        "description": "Ứng dụng mua sắm trực tuyến với nhiều ưu đãi, hỗ trợ thanh toán online, tích điểm và giao hàng nhanh chóng trên toàn quốc.",
+        "category": "Mua sắm & Thanh toán"
+      },
+      {
+        "name": "MoMo",
+        "icon": "https://th.bing.com/th/id/OIP.1GNvjAZu4hlbE0bWflshGwHaHa?rs=1&pid=ImgDetMain",
+        "description": "Ví điện tử hàng đầu tại Việt Nam, hỗ trợ thanh toán hóa đơn, chuyển tiền, nạp tiền điện thoại và mua sắm trực tuyến dễ dàng.",
+        "category": "Mua sắm & Thanh toán"
+      },
+      {
+        "name": "Google Maps",
+        "icon": "https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/150/google-maps-1024.png",
+        "description": "Ứng dụng bản đồ thông minh, hỗ trợ chỉ đường bằng giọng nói, hiển thị giao thông thời gian thực và tìm kiếm địa điểm dễ dàng.",
+        "category": "Bản đồ & Dẫn đường"
+      },
+      {
+        "name": "Camera",
+        "icon": "https://th.bing.com/th/id/OIP.Y_1Ic2h6ozxfgnaWO82BoQHaHN?rs=1&pid=ImgDetMain",
+        "description": "Ứng dụng chụp ảnh, quay video chất lượng cao trên iPhone, hỗ trợ nhiều chế độ như chân dung, ban đêm, HDR và chỉnh sửa ảnh.",
+        "category": "Ảnh & Video"
+      },
+      {
+        "name": "Messenger",
+        "icon": "https://static.vecteezy.com/system/resources/previews/022/488/748/original/3d-render-meta-chat-messenger-facebook-messenger-icon-bubble-isolated-on-transparent-background-free-png.png",
+        "description": "Ứng dụng nhắn tin nhanh của Facebook, hỗ trợ gọi video, gửi sticker, GIFs và chia sẻ hình ảnh dễ dàng.",
+        "category": "Liên lạc"
+      },
+      {
+        "name": "Gmail",
+        "icon": "https://static.vecteezy.com/system/resources/previews/022/484/516/original/google-mail-gmail-icon-logo-symbol-free-png.png",
+        "description": "Dịch vụ email phổ biến của Google, hỗ trợ gửi và nhận email, lọc thư rác, tích hợp Google Drive và truy cập nhiều tài khoản.",
+        "category": "Liên lạc"
+      },
+      {
+        "name": "Outlook",
+        "icon": "https://th.bing.com/th/id/OIP.7LOtbzJ-VmKeHy8gKKKuQQHaHa?rs=1&pid=ImgDetMain",
+        "description": "Dịch vụ email của Microsoft, hỗ trợ quản lý công việc, lên lịch họp, đồng bộ với Office 365 và lưu trữ email an toàn.",
+        "category": "Liên lạc"
+      },
+      {
+        "name": "Grab",
+        "icon": "https://th.bing.com/th/id/R.f4dd2c8de14c38e91c7ee3b0ce57732f?rik=d5ke24qRBT9CnQ&pid=ImgRaw&r=0",
+        "description": "Ứng dụng đặt xe công nghệ, giao đồ ăn, giao hàng nhanh chóng, hỗ trợ thanh toán không tiền mặt và nhiều ưu đãi hấp dẫn.",
+        "category": "Giao thông & Giao hàng"
+      },
+      {
+        "name": "ChatGPT",
+        "icon": "https://static.vecteezy.com/system/resources/previews/021/059/827/original/chatgpt-logo-chat-gpt-icon-on-white-background-free-vector.jpg",
+        "description": "Trợ lý AI thông minh, giúp trả lời câu hỏi, hỗ trợ học tập, sáng tạo nội dung và lập trình.",
+        "category": "Trí tuệ nhân tạo"
+      },
+      {
+        "name": "Zoom",
+        "icon": "https://cdn.osxdaily.com/wp-content/uploads/2022/04/zoom-icon.jpg",
+        "description": "Ứng dụng họp trực tuyến, hỗ trợ video call nhóm, chia sẻ màn hình và ghi âm cuộc họp.",
+        "category": "Liên lạc"
+      },
+      {
+        "name": "Investing.com",
+        "icon": "https://yt3.ggpht.com/a/AATXAJxZAJcVrUFGS7p2TiGt-683uxX4dkvyhojhCQ=s900-c-k-c0xffffffff-no-rj-mo",
+        "description": "Ứng dụng theo dõi thông tin tài chính, chứng khoán, thị trường tiền tệ và tiền điện tử.",
+        "category": "Tài chính & Đầu tư"
+      },
+      {
+        "name": "Bluetooth",
+        "icon": "https://cdn-icons-png.flaticon.com/512/5465/5465445.png",
+        "description": "Tính năng kết nối không dây, giúp ghép nối các thiết bị như tai nghe, loa, bàn phím và truyền dữ liệu giữa các thiết bị.",
+        "category": "Hệ thống"
+      },
+      {
+        "name": "WiFi",
+        "icon": "https://cdn-icons-png.flaticon.com/512/93/93158.png",
+        "description": "Kết nối internet không dây, hỗ trợ truy cập mạng tốc độ cao tại các điểm phát WiFi công cộng hoặc gia đình.",
+        "category": "Hệ thống"
+      },
+      {
+        "name": "NFC",
+        "icon": "https://www.freeiconspng.com/uploads/nfc-icon-31.png",
+        "description": "Tính năng truyền dữ liệu không dây trong phạm vi gần, hỗ trợ thanh toán di động, mở khóa thiết bị và chia sẻ nội dung.",
+        "category": "Hệ thống"
+      },
+      {
+        "name": "3G/4G/5G",
+        "icon": "https://cdn-icons-png.flaticon.com/512/220/220222.png",
+        "description": "Các thế hệ mạng di động, cho phép truy cập Internet khi không có WiFi. 5G cung cấp tốc độ nhanh hơn và độ trễ thấp hơn.",
+        "category": "Hệ thống"
+      },
+      {
+        "name": "PDF",
+        "icon": "https://cdn-icons-png.flaticon.com/512/337/337946.png",
+        "description": "Định dạng tài liệu phổ biến, thường dùng để lưu trữ và chia sẻ văn bản, hình ảnh với bố cục không thay đổi trên mọi thiết bị.",
+        "category": "Định dạng tập tin"
+      },
+      {
+        "name": "Microsoft Word",
+        "icon": "https://cdn-icons-png.flaticon.com/512/732/732220.png",
+        "description": "Ứng dụng xử lý văn bản, tạo tài liệu, báo cáo, luận văn, hỗ trợ định dạng chuyên nghiệp và chia sẻ dễ dàng.",
+        "category": "Định dạng tập tin"
+      },
+      {
+        "name": "Microsoft Excel",
+        "icon": "https://cdn-icons-png.flaticon.com/512/732/732224.png",
+        "description": "Ứng dụng tạo bảng tính, quản lý dữ liệu, tính toán và lập báo cáo bằng công thức, biểu đồ và hàm nâng cao.",
+        "category": "Định dạng tập tin"
+      },
+      {
+        "name": "Microsoft PowerPoint",
+        "icon": "https://cdn-icons-png.flaticon.com/512/732/732223.png",
+        "description": "Ứng dụng tạo bài thuyết trình chuyên nghiệp, hỗ trợ chèn hình ảnh, biểu đồ, video và hiệu ứng chuyển động.",
+        "category": "Định dạng tập tin"
+      },
+      {
+        "name": "JPG",
+        "icon": "https://cdn-icons-png.flaticon.com/512/136/136530.png",
+        "description": "Định dạng ảnh phổ biến, hỗ trợ nén dung lượng thấp nhưng vẫn giữ được chất lượng hình ảnh cao.",
+        "category": "Định dạng tập tin"
+      },
+      {
+        "name": "PNG",
+        "icon": "https://cdn-icons-png.flaticon.com/512/136/136524.png",
+        "description": "Định dạng ảnh hỗ trợ nền trong suốt, phù hợp để thiết kế đồ họa, logo và ảnh minh họa.",
+        "category": "Định dạng tập tin"
+      },
+      {
+        "name": "ZIP",
+        "icon": "https://cdn-icons-png.flaticon.com/512/136/136523.png",
+        "description": "Định dạng nén file, giúp giảm dung lượng tập tin và gộp nhiều file vào một tệp duy nhất để dễ dàng chia sẻ.",
+        "category": "Định dạng tập tin"
+      }
+    ]
+
+      ;
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Lấy danh mục duy nhất từ danh sách ứng dụng
+      function getUniqueCategories() {
+        const categories = [...new Set(apps.map(app => app.category))];
+        return categories.sort();
+      }
+
+      // Tạo danh sách danh mục cho dropdown
+      function renderCategorySelection() {
+        const categorySelect = document.getElementById("category");
+        categorySelect.innerHTML = '<option value="">📂 Tất cả</option>'; // Reset với tùy chọn mặc định
+
+        getUniqueCategories().forEach(category => {
+          const option = document.createElement("option");
+          option.value = category;
+          option.textContent = category;
+          categorySelect.appendChild(option);
+        });
+      }
+
+      // Hiển thị danh sách ứng dụng
+      function renderApps(filteredApps = apps) {
+        const appList = document.getElementById("app-list");
+        appList.innerHTML = ""; // Xóa danh sách cũ trước khi hiển thị mới
+
+        if (filteredApps.length === 0) {
+          appList.innerHTML = "<p>Không tìm thấy ứng dụng nào!</p>";
+          return;
+        }
+
+        filteredApps.forEach(app => {
+          const appCard = document.createElement("div");
+          appCard.className = "app-card";
+          appCard.innerHTML = `
+        <img src="${app.icon}" alt="${app.name}">
+        <h3>${app.name}</h3>
+        <p>${app.description}</p>
+      `;
+          appCard.onclick = () => showDetail(app);
+          appList.appendChild(appCard);
+        });
+      }
+
+      // Hàm lọc ứng dụng theo tìm kiếm & danh mục
+      function filterApps() {
+        const query = document.getElementById("search").value.toLowerCase();
+        const category = document.getElementById("category").value;
+
+        const filteredApps = apps.filter(app =>
+          (query === "" || app.name.toLowerCase().includes(query)) && // Lọc theo từ khóa
+          (category === "" || app.category === category) // Lọc theo danh mục
+        );
+
+        renderApps(filteredApps);
+      }
+
+      // Hiển thị chi tiết ứng dụng khi click vào
+      function showDetail(app) {
+        document.getElementById("app-icon").src = app.icon;
+        document.getElementById("app-name").innerText = app.name;
+        document.getElementById("app-description").innerText = app.description;
+        document.getElementById("app-detail").style.display = "block";
+      }
+
+      // Đóng cửa sổ chi tiết
+      function closeDetail() {
+        document.getElementById("app-detail").style.display = "none";
+      }
+
+      // Khởi tạo trang
+      renderCategorySelection(); // Cập nhật danh mục dropdown
+      renderApps(); // Hiển thị tất cả ứng dụng ban đầu
+
+      // Gán sự kiện cho ô tìm kiếm và danh mục
+      document.getElementById("search").addEventListener("keyup", filterApps);
+      document.getElementById("category").addEventListener("change", filterApps);
+
+      // Gán sự kiện cho nút đóng
+      document.querySelector(".close-btn").addEventListener("click", closeDetail);
+    });
+
+
+
+  </script>
+
+</body>
+
+</html>
