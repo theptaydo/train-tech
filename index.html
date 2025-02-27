@@ -5,123 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Danh sách Ứng dụng iPhone 15</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    .filter-container {
-      width: 100%;
-      /* display: flex
-; */
-      justify-content: space-between;
-      margin-bottom: 20px;
-      justify-content: center;
-      align-items: center;
-      display: inline-block;
-      /* margin: 0 auto; */
-
-    }
-
-    input,
-    select {
-      width: 90%;
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      /* margin: 0 auto; */
-      align-items: center;
-      display: flex;
-      justify-content: center;
-    }
-
-    .app-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
-
-    .app-card {
-      width: 200px;
-      background: white;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .app-card img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .app-card h3 {
-      margin: 10px 0;
-      font-size: 18px;
-    }
-
-    .app-card p {
-      font-size: 14px;
-      color: #555;
-      white-space: nowrap;
-      /* Không cho phép xuống dòng */
-      overflow: hidden;
-      /* Ẩn nội dung vượt quá kích thước */
-      text-overflow: ellipsis;
-      /* Hiển thị dấu "..." khi quá dài */
-      max-width: 100%;
-      /* Giới hạn độ rộng */
-      display: block;
-      /* Đảm bảo nó hoạt động với các phần tử inline */
-    }
-
-    .app-detail {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      padding: 20px;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-      border-radius: 10px;
-      width: 80%;
-      max-width: 400px;
-      text-align: center;
-    }
-
-    .app-detail img {
-      width: 100px;
-      height: 100px;
-      border-radius: 15px;
-    }
-
-    .app-detail h2 {
-      margin-top: 10px;
-    }
-
-    .close-btn {
-      margin-top: 10px;
-      background: red;
-      color: white;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
@@ -186,13 +70,13 @@
         "name": "Zalo",
         "icon": "https://th.bing.com/th/id/OIP.xW2F3TvZmbupU73ecvsm-QHaHB?rs=1&pid=ImgDetMain",
         "description": "Ứng dụng nhắn tin, gọi điện miễn phí phổ biến tại Việt Nam. Hỗ trợ gửi ảnh, video, tin nhắn thoại và tạo nhóm trò chuyện dễ dàng.",
-        "category": "Liên lạc"
+        "category": "Liên lạc & Mạng xã hội"
       },
       {
         "name": "Facebook",
         "icon": "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
         "description": "Mạng xã hội phổ biến nhất thế giới, cho phép bạn kết nối với bạn bè, chia sẻ hình ảnh, video, cập nhật trạng thái và theo dõi tin tức.",
-        "category": "Mạng xã hội"
+        "category": "Liên lạc & Mạng xã hội"
       },
       {
         "name": "Shopee",
@@ -222,7 +106,7 @@
         "name": "Messenger",
         "icon": "https://static.vecteezy.com/system/resources/previews/022/488/748/original/3d-render-meta-chat-messenger-facebook-messenger-icon-bubble-isolated-on-transparent-background-free-png.png",
         "description": "Ứng dụng nhắn tin nhanh của Facebook, hỗ trợ gọi video, gửi sticker, GIFs và chia sẻ hình ảnh dễ dàng.",
-        "category": "Liên lạc"
+        "category": "Liên lạc & Mạng xã hội"
       },
       {
         "name": "Gmail",
@@ -259,6 +143,11 @@
         "icon": "https://yt3.ggpht.com/a/AATXAJxZAJcVrUFGS7p2TiGt-683uxX4dkvyhojhCQ=s900-c-k-c0xffffffff-no-rj-mo",
         "description": "Ứng dụng theo dõi thông tin tài chính, chứng khoán, thị trường tiền tệ và tiền điện tử.",
         "category": "Tài chính & Đầu tư"
+      }, {
+        "name": "Cài đặt",
+        "icon": "https://th.bing.com/th/id/R.46b3e762d7e29dfcce1c57c7ab6f9ce4?rik=0BfkB5XCVsDgtA&riu=http%3a%2f%2ficons.iconarchive.com%2ficons%2fiynque%2fios7-style%2f1024%2fSettings-icon.png&ehk=rssjNCq%2b5tj6rBc%2fDC%2fWZEftsqyRzHlEhDdiDNo2JOw%3d&risl=&pid=ImgRaw&r=0",
+        "description": "Ứng dụng cài đặt mặc định của IPhone, giúp tùy chỉnh hệ thống của điện thoại",
+        "category": "Hệ thống"
       },
       {
         "name": "Bluetooth",
@@ -280,7 +169,7 @@
       },
       {
         "name": "3G/4G/5G",
-        "icon": "https://cdn-icons-png.flaticon.com/512/220/220222.png",
+        "icon": "https://images.assetsdelivery.com/compings_v2/sumberejeki/sumberejeki2007/sumberejeki200700752.jpg",
         "description": "Các thế hệ mạng di động, cho phép truy cập Internet khi không có WiFi. 5G cung cấp tốc độ nhanh hơn và độ trễ thấp hơn.",
         "category": "Hệ thống"
       },
@@ -292,37 +181,37 @@
       },
       {
         "name": "Microsoft Word",
-        "icon": "https://cdn-icons-png.flaticon.com/512/732/732220.png",
+        "icon": "https://cdn0.iconfinder.com/data/icons/logos-microsoft-office-365/128/Microsoft_Office_Mesa_de_trabajo_1-1024.png",
         "description": "Ứng dụng xử lý văn bản, tạo tài liệu, báo cáo, luận văn, hỗ trợ định dạng chuyên nghiệp và chia sẻ dễ dàng.",
         "category": "Định dạng tập tin"
       },
       {
         "name": "Microsoft Excel",
-        "icon": "https://cdn-icons-png.flaticon.com/512/732/732224.png",
+        "icon": "https://th.bing.com/th/id/OIP.mXy7jW5xnPZbjB1DeSmehgHaHD?rs=1&pid=ImgDetMain",
         "description": "Ứng dụng tạo bảng tính, quản lý dữ liệu, tính toán và lập báo cáo bằng công thức, biểu đồ và hàm nâng cao.",
         "category": "Định dạng tập tin"
       },
       {
         "name": "Microsoft PowerPoint",
-        "icon": "https://cdn-icons-png.flaticon.com/512/732/732223.png",
+        "icon": "https://th.bing.com/th/id/OIP.Kv4JnH-5-9edD6oDa_GrLAHaHa?rs=1&pid=ImgDetMain",
         "description": "Ứng dụng tạo bài thuyết trình chuyên nghiệp, hỗ trợ chèn hình ảnh, biểu đồ, video và hiệu ứng chuyển động.",
         "category": "Định dạng tập tin"
       },
       {
         "name": "JPG",
-        "icon": "https://cdn-icons-png.flaticon.com/512/136/136530.png",
+        "icon": "https://th.bing.com/th/id/OIP.vpS3kvk4_SekSv1HIW2-2gHaHa?rs=1&pid=ImgDetMain",
         "description": "Định dạng ảnh phổ biến, hỗ trợ nén dung lượng thấp nhưng vẫn giữ được chất lượng hình ảnh cao.",
         "category": "Định dạng tập tin"
       },
       {
         "name": "PNG",
-        "icon": "https://cdn-icons-png.flaticon.com/512/136/136524.png",
+        "icon": "https://th.bing.com/th/id/R.b204f2423c0bb23ac77f05324df9e053?rik=EiOYkin0SqrQkg&pid=ImgRaw&r=0",
         "description": "Định dạng ảnh hỗ trợ nền trong suốt, phù hợp để thiết kế đồ họa, logo và ảnh minh họa.",
         "category": "Định dạng tập tin"
       },
       {
         "name": "ZIP",
-        "icon": "https://cdn-icons-png.flaticon.com/512/136/136523.png",
+        "icon": "https://th.bing.com/th/id/OIP.skdKj38gChGwdwzde2PnQQAAAA?w=256&h=256&rs=1&pid=ImgDetMain",
         "description": "Định dạng nén file, giúp giảm dung lượng tập tin và gộp nhiều file vào một tệp duy nhất để dễ dàng chia sẻ.",
         "category": "Định dạng tập tin"
       }
@@ -364,10 +253,15 @@
           const appCard = document.createElement("div");
           appCard.className = "app-card";
           appCard.innerHTML = `
-        <img src="${app.icon}" alt="${app.name}">
-        <h3>${app.name}</h3>
-        <p>${app.description}</p>
-      `;
+            <div class="app-info">
+              <div class="app-title">
+                <img src="${app.icon}" alt="${app.name}">
+                <h3>${app.name}</h3>
+              </div>
+              <p class="app-description">${app.description}</p>
+            </div>
+          `;
+
           appCard.onclick = () => showDetail(app);
           appList.appendChild(appCard);
         });
@@ -379,9 +273,12 @@
         const category = document.getElementById("category").value;
 
         const filteredApps = apps.filter(app =>
-          (query === "" || app.name.toLowerCase().includes(query)) && // Lọc theo từ khóa
-          (category === "" || app.category === category) // Lọc theo danh mục
+          (query === "" ||
+            app.name.toLowerCase().includes(query) ||
+            app.description.toLowerCase().includes(query)) &&
+          (category === "" || app.category === category)
         );
+
 
         renderApps(filteredApps);
       }
